@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width">
+  <style>
+    body {
+      font-family: "helvetica";
+    }
+    .testDesc {
+      font-weight: bold;
+      font-size: 11px;
+    }
+
+    .testContainer {
+      width: 300px;
+      height: 270px;
+      overflow:hidden;
+    }
+
+    #content {
+      max-width: 800px;
+    }
+  </style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <script>
+    var matches = decodeURIComponent(document.location.search).
+        match(/debug_experiment_id=((?:\d|,)*)/);
+    var debugExperimentId = matches && matches.length > 1 && matches[1];
+    var is_debug = getParameterByName('debug_mode') == 'true';
+
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#/]*)"),
+          results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    function showAds(adGroups) {
+      var url = 'ad-response';
+
+      document.write('<scri' + 'pt src="' + url.replace('\'', '\'\'') + '"></scri' + 'pt>');
+    }
+
+    function getAbsolutePath(relativePath) {
+      var pageUrl = document.location.protocol + '//' + document.location.host +
+          document.location.pathname;
+      return pageUrl.substr(0, pageUrl.lastIndexOf('/') + 1) + relativePath;
+    }
+
+    $(function() {
+      $('#debug_experiment_id').val(debugExperimentId);
+      if (debugExperimentId) {
+        $('.hide-with-experiments').hide();
+        $('.show-with-experiments').show();
+      }
+
+      if (is_debug) {
+        $("#debug_mode").attr('value', 'false');
+        $("#debug_button").text('Disable');
+      } else {
+        $("#debug_mode").attr('value', 'true');
+        $("#debug_button").text('Enable');
+      }
+    });
+  </script>
+
+  <div id="content">
+    <h2>DAB HTML5 Studio Outstream Template</h2>
+
+    <h3 style="color:OrangeRed" class="hide-with-experiments">
+      Please open this page with mobile device or chrome Device Mode. Outstream Video creatives will
+      not be served if the inventory is from desktop (go/bf:uvcplatform).
+    </h3>
+
+    <h4 style="color:maroon" class="hide-with-experiments">
+      Note: Experiments are disabled.
+    </h4>
+    <h4 style="display:none; color:Orange" class="show-with-experiments">
+      Note: Experiments are enabled.
+      <span style="display:none; font-size: 16px; color: #f8f8f8" class="show-with-experiments">
+        For science!
+      </span>
+    </h4>
+    <form method="GET" action="">
+      <input type="text" value="" name="debug_experiment_id" id="debug_experiment_id" />
+      <button type="submit">Enable Experiments</button>
+    </form>
+    <h2>Debug mode</h2>
+    <form method="GET" action="">
+      <input type="hidden" value="false" name="debug_mode" id="debug_mode" />
+      <button type="submit" id='debug_button'>Enable</button>
+    </form>
+
+    <p>
+      Neil deGrasse Tyson is stepping up his game, roaring,
+      cajoling, stomping his big, considerable, eloquent self to
+      say we have got to, got to, GOT TO, step off this planet and
+      go places, back to the moon, on to Mars, that we can't afford
+      not to, that if we don't, if we don't support a manned space
+      program, we are robbing ourselves, we are stepping on "the
+      foundations of tomorrow's economies," without which, "we
+      might as well slide back to the cave, because that's where
+      we're headed now, broke!"
+    </p>
+
+    <p>
+      He's serious. Crazy (as usual), passionate (always), smart
+      (no doubt). Just listen to him in this montage, taken from
+      his speeches, TV appearances, assembled by Evan Shurr,
+      apparently to support more funding for NASA.
+    </p>
+
+    <br>
+    <div class="testContainer">
+      <div style="width: 300px; height: 250px">
+        <script type="text/javascript">
+          google_ad_client = "ca-mongoogle"
+          google_ad_width = "300";
+          google_ad_height = "250";
+          google_ad_format = "300x250_as";
+          google_ad_output = "html";
+          google_targeting = "site";
+          google_page_url = "3pcerttesting.com/engagementads-html5-studio/dab-outstream-video-qa.html";
+          google_language = "en";
+          google_allow_expandable_ads = false;
+        </script>
+        <script>showAds(42378339096);</script>
+      </div>
+      <div class="testDesc">In-page Outstream</div>
+    </div>
+
+    <p>
+      I remember those days, when you could grow up in the
+      "Skyview" apartments (as Neil did in the Bronx) and dream of
+      being up there with Glenn and Aldrin and Armstrong, feel like
+      you were living in an explorer's age, that you could ride
+      with your heroes and cheer from the bleachers (your living
+      room in front of the TV) as your nation tumbled into space.
+      It was amazing. And like Neil, I want those days back.
+    </p>
+
+    <h3>The Question</h3>
+
+    <p>
+      But here's my question: Do we need NASA (or the Chinese,
+      Russian, Japanese, European, Indian space agencies) to get
+      there anymore? Neil seems to think we do. NASA's greatest,
+      astronauts Neil Armstrong and Gene Cernan, went to Congress
+      early in the Obama Administration to say that the new president
+      is wrong to support (and direct NASA to support) private
+      commercial efforts. Business folks won't do it safely, said
+      Cernan. But businesses are doing it anyway. Just last week a
+      commercially-built rocket (from Elon Musk's California company,
+      SpaceX) traveled to the space station, docked, and delivered
+      cargo - so NASA no longer has to rely on Russian rockets to
+      make deliveries. It was a thrilling, entrepreneurial, bootstrap
+      performance (with, yes, a $1.6 billion contract from NASA),
+      but where were the cheers?
+    </p>
+
+    Interesting Content
+    <br/><br/>
+    Interesting Content
+    <br/><br/>
+    Interesting Content
+    <br/><br/>
+    Interesting Content
+    <br/><br/>
+    Interesting Content
+    <br/><br/>
+    Interesting Content
+    <br/><br/>
+  </div>
+</body>
+
+</html>
